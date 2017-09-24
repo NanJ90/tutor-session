@@ -34,7 +34,6 @@ module.exports = function(sequelize, DataTypes) {
   return Meetings;
 }
 
-
 // MODEL FOR MODEL FROM TRELLO
 // Meetings = {
 // date: date,

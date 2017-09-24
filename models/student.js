@@ -67,14 +67,9 @@ module.exports = function(sequelize, DataTypes) {
     Student.associate = function(models) {
 
       Student.hasMany(models.Meeting, {
-        //I don't know if we need to do something here.
 
-        //They do need to be associated but we don't want to
-        //    cascade upon delete because the time slots
-        //    should remain if they do
+        onDelete: "SET NULL",
 
-        // onDelete: "?",
-        // orSomethingElseEntirely: "?"
       });
 
     };

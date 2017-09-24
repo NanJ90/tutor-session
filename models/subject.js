@@ -12,7 +12,8 @@ module.exports = function(sequelize, DataTypes) {
       }
   });
 
-  Subject.associate = function(models) {
+  // I think we don't need this, but I'm leaving it here for now just in case
+  // Subject.associate = function(models) {
 
       // MAY HAVE FOUND BETTER "BELONGS TO MANY" FUNCTION THAT SIMPLIFIES THIS
       // Subject.belongsTo(models.Tutor, {
@@ -25,12 +26,12 @@ module.exports = function(sequelize, DataTypes) {
       //     allowNull: true
       //   }
       // });
-  };
+  // };
 
   return Subject;
 }
 
-
+// MODEL FOR MODEL FROM TRELLO
 // Subject = {
 // subjectName: string,
 // primaryKey:id

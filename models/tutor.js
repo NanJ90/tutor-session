@@ -76,7 +76,7 @@ module.exports = function(sequelize, DataTypes) {
     Tutor.associate = function(models) {
 
       Tutor.hasMany(models.Meeting, {
-        onDelete: "cascade"
+        onDelete: "CASCADE"
       });
 
     };

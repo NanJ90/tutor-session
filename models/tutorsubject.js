@@ -6,10 +6,19 @@ module.exports = function(sequelize, DataTypes) {
       primaryKey: true,
       autoIncrement: true
     }
-    // ,
-    // role: Sequelize.STRING
-    //NOT SURE WHAT WE NEED, IF ANYTHING, HERE
   });
-  Tutor.belongsToMany(Subject, { through: TutorSubject });
-  Subject.belongsToMany(Tutor, { through: TutorSubject });
+
+  Tutor.belongsToMany(Subject, {
+    through: TutorSubject,
+    onDelete: 'CASCADE',
+    onUpdate: 'CASCADE',
+    foreignKey: 'tutor_id'
+  });
+  
+  Subject.belongsToMany(Tutor, {
+    through: TutorSubject,
+    onDelete: 'CASCADE',
+    onUpdate: 'CASCADE',
+    foreignKey: 'subject_id'
+  });
 }
