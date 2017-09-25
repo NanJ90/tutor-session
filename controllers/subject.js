@@ -7,14 +7,4 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/api/subjects/:id", function(req, res) {
-    db.Subject.findOne({
-      where: {
-        id: req.params.id
-      }
-    }).then(function(dbSubject) {
-      res.json(dbSubject);
-    });
-  });
-
 };

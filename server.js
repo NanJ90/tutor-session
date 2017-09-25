@@ -10,10 +10,10 @@ var bodyParser = require("body-parser");
 // Sets up the Express App
 // =============================================================
 var app = express();
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 3000;
 
 // Requiring our models for syncing
-var db = require("../models");
+var db = require("./models");
 
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.json());
@@ -27,11 +27,10 @@ app.use(express.static("public"));
 // Routes
 // =============================================================
 // require("./routes/html-routes.js")(app);
-require("../routes/meeting.js")(app);
-require("../routes/student.js")(app);
-require("../routes/subject.js")(app);
-require("../routes/tutor.js")(app);
-require("../routes/tutorsubject.js")(app);
+require("./controllers/meeting.js")(app);
+require("./controllers/student.js")(app);
+require("./controllers/subject.js")(app);
+// require("./controllers/tutor.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================

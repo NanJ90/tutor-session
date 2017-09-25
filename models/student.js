@@ -1,36 +1,89 @@
-var db = require("../models");
+// "use strict";
+//
+// var bcrypt = require("bcrypt-nodejs");
 
-module.exports = function(app) {
-  app.get("/api/students", function(req, res) {
-    db.Student.findAll({}).then(function(dbStudent) {
-      res.json(dbStudent);
-    });
-  });
+module.exports = function(sequelize, DataTypes) {
 
-  app.get("/api/students/:id", function(req, res) {
-    db.Student.findOne({
-      where: {
-        id: req.params.id
+  var Student = sequelize.define("Student", {
+      id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+      },
+      name: {
+  			type: DataTypes.STRING,
+  			allowNull: false,
+  			validate: {
+  				len: [0, 100]
+  			}
+  		},
+      password: {
+  			type: DataTypes.STRING,
+  			allowNull: false
+  		},
+      email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          isEmail: true
+        }
+      },
+      phone: {
+        type: DataTypes.STRING,
+        validate: {
+          len: [7, 22]
+        }
       }
-    }).then(function(dbStudent) {
-      res.json(dbStudent);
-    });
-  });
+    }
+    // ,
+    // THIS IS COPIED FROM GEN'S CODE FROM OUR LAST PROJECT TOGETHER
+    //    BECAUSE I THINK IT MAY BE NECESSARY?
+    // {
+  	// 	timestamps: false
+  	// },
+    //   {
+   // 		hooks: {
+   // 			beforeValidate: function(user, options) {
+   // 				user.username = user.username.toLowerCase();
+   // 			}
+   // 		},
+   // 		classMethods: {
+   // 			generateHash: function(password) {
+   // 				return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+   // 			},
+   // 			associate: function(models) {
+   // 				Student.hasMany(models.Meeting);
+   // 			}
+   // 		},
+   // 		instanceMethods: {
+   // 			validPassword: function(password) {
+   // 				return bcrypt.compareSync(password, this.password);
+   // 			}
+   // 		}
+   // 	}
+   , {
+     timestamps: false
+   });
 
-  app.post("/api/students", function(req, res) {
-    db.Student.create(req.body).then(function(dbStudent) {
-      res.json(dbStudent);
-    });
-  });
+    Student.associate = function(models) {
 
-  app.delete("/api/students/:id", function(req, res) {
-    db.Student.destroy({
-      where: {
-        id: req.params.id
-      }
-    }).then(function(dbStudent) {
-      res.json(dbStudent);
-    });
-  });
+      Student.hasMany(models.Meetings, {
 
+        onDelete: "SET NULL",
+
+      });
+
+    };
+
+    return Student;
 };
+
+// MODEL FOR MODEL FROM TRELLO
+// [LOGIN AND SIGN UP]
+// Student = {
+// studentName: string,
+// password: string,
+// email:
+// phone: int
+// primarykey: id
+// }

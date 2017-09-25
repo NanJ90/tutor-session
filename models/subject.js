@@ -8,25 +8,21 @@ module.exports = function(sequelize, DataTypes) {
   		},
       name: {
         type: DataTypes.STRING,
-        notNull: true
+        allowNull: false
       }
+  }, {
+    timestamps: false
   });
 
-  // I think we don't need this, but I'm leaving it here for now just in case
-  // Subject.associate = function(models) {
+  Subject.associate = function(models) {
 
-      // MAY HAVE FOUND BETTER "BELONGS TO MANY" FUNCTION THAT SIMPLIFIES THIS
-      // Subject.belongsTo(models.Tutor, {
-      //   foreignKey: {
-      //     notNull: true
-      //   }
-      // });
-      // Subject.belongsTo(models.Student, {
-      //   foreignKey: {
-      //     allowNull: true
-      //   }
-      // });
-  // };
+      Subject.belongsTo(models.Tutor, {
+        foreignKey: {
+          notNull: true
+        }
+      });
+
+  };
 
   return Subject;
 }

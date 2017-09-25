@@ -3,9 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "express": "^4.15.5",
+    "handlebars": "^4.0.10",
+    "mysql2": "^1.4.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-scripts": "1.0.13"
+    "react-scripts": "1.0.13",
+    "sequelize": "^4.11.0"
   },
   "scripts": {
     "start": "react-scripts start",
