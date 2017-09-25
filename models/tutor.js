@@ -14,25 +14,25 @@ module.exports = function(sequelize, DataTypes) {
       },
       name: {
   			type: DataTypes.STRING,
-  			notNull: true,
+  			allowNull: false,
   			validate: {
   				len: [0, 100]
   			}
   		},
       password: {
   			type: DataTypes.STRING,
-  			notNull: true
+  			allowNull: false
   		},
       email: {
         type: DataTypes.STRING,
-        notNull: true,
+        allowNull: false,
         validate: {
           isEmail: true
         }
       },
       phone: {
         type: DataTypes.STRING,
-        notNull: true,
+        allowNull: false,
         validate: {
           len: [7, 22]
         }
@@ -71,13 +71,20 @@ module.exports = function(sequelize, DataTypes) {
    // 			}
    // 		}
    // 	}
-  );
+   , {
+     timestamps: false
+   });
 
     Tutor.associate = function(models) {
 
-      Tutor.hasMany(models.Meeting, {
+      Tutor.hasMany(models.Meetings, {
         onDelete: "CASCADE"
       });
+
+      Tutor.hasMany(models.Subject, {
+        onDelete: "CASCADE"
+      });
+
 
     };
 

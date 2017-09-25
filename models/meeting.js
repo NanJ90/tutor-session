@@ -1,27 +1,20 @@
 module.exports = function(sequelize, DataTypes) {
 
   var Meetings = sequelize.define("Meetings", {
-      id: {
-  			type: DataTypes.INTEGER,
-  			primaryKey: true,
-  			autoIncrement: true
-  		},
       day: {
-        type: DataTypes.DATEONLY,
+        type: DataTypes.DATE,
         isDate: true,
-        notNull: true
-      },
-      hour: {
-        type: DataTypes.TIME,
-        notNull: true
+        allowNull: false
       }
+  }, {
+    timestamps: false
   });
 
   Meetings.associate = function(models) {
 
       Meetings.belongsTo(models.Tutor, {
         foreignKey: {
-          notNull: true
+          allowNull: true
         }
       });
       Meetings.belongsTo(models.Student, {

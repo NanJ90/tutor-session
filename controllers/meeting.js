@@ -1,14 +1,14 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  app.get("/api/authors", function(req, res) {
-    db.Meeting.findAll({}).then(function(dbMeeting) {
+  app.get("/api/meetings", function(req, res) {
+    db.Meetings.findAll({}).then(function(dbMeeting) {
       res.json(dbMeeting);
     });
   });
 
   app.get("/api/meetings/:id", function(req, res) {
-    db.Meeting.findOne({
+    db.Meetings.findOne({
       where: {
         id: req.params.id
       }
@@ -18,13 +18,13 @@ module.exports = function(app) {
   });
 
   app.post("/api/meetings", function(req, res) {
-    db.Meeting.create(req.body).then(function(dbMeeting) {
+    db.Meetings.create(req.body).then(function(dbMeeting) {
       res.json(dbMeeting);
     });
   });
 
   app.delete("/api/meetings/:id", function(req, res) {
-    db.Meeting.destroy({
+    db.Meetings.destroy({
       where: {
         id: req.params.id
       }
