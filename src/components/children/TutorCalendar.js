@@ -1,19 +1,7 @@
-// import ReactEventsCalendar from 'react-events-calendar';
-
-// render() {
-//     <ReactEventsCalendar ref="calendar"
-//                          events={this.state.events}
-//                          onDateSelect={this.handleSelectedDate}
-//                          onMonthChange={this.handleMonthChange}
-//     />
-// }
-
-
-
 import React from 'react';
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
-// import events from './events';
+import events from 'react-big-calendar';
 // import momentLocalizer from 'react-widgets/lib/localizer/moment';
  
 BigCalendar.setLocalizer(
@@ -25,12 +13,13 @@ let allViews = Object.keys(BigCalendar.views).map(k => BigCalendar.views[k])
 const TutorCalendar = props => (
   <div>
     <BigCalendar
+    
       events= {[
   {
     'title': 'All Day Event',
     'allDay': true,
     'start': new Date(2017, 9, 25),
-    'end': new Date(2017, 9, 25)
+    'end': new Date(2017, 9, 26)
   }
  //  {
  //    'title': 'Long Event',
