@@ -1,38 +1,27 @@
-// THIS PART IS COPIED FROM GEN'S CODE FROM OUR LAST PROJECT TOGETHER
-//    BECAUSE I THINK IT MAY BE NECESSARY?
-// "use strict";
-//
+
 // var bcrypt = require("bcrypt-nodejs");
 
 module.exports = function(sequelize, DataTypes) {
 
   var Tutor = sequelize.define("Tutor", {
-      id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true
-      },
       name: {
   			type: DataTypes.STRING,
   			allowNull: false,
-  			validate: {
-  				len: [0, 100]
-  			}
   		},
       password: {
   			type: DataTypes.STRING,
-  			allowNull: false
+  			allowNull: true
   		},
       email: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         validate: {
           isEmail: true
         }
       },
       phone: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         validate: {
           len: [7, 22]
         }
@@ -46,8 +35,6 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
     // ,
-    // THIS PART IS COPIED FROM GEN'S CODE FROM OUR LAST PROJECT TOGETHER
-    //    BECAUSE I THINK IT MAY BE NECESSARY?
     // {
   	// 	timestamps: false
   	// },
@@ -78,11 +65,12 @@ module.exports = function(sequelize, DataTypes) {
     Tutor.associate = function(models) {
 
       Tutor.hasMany(models.Meetings, {
-        onDelete: "CASCADE"
+        // onDelete: "CASCADE"
       });
 
-      Tutor.hasMany(models.Subject, {
-        onDelete: "CASCADE"
+      Tutor.belongsToMany(models.Subject, {
+        through: 'tutor_subject',
+        foreignKey: 'TutorId'
       });
 
 

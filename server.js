@@ -30,7 +30,7 @@ app.use(express.static("public"));
 require("./controllers/meeting.js")(app);
 require("./controllers/student.js")(app);
 require("./controllers/subject.js")(app);
-// require("./controllers/tutor.js")(app);
+require("./controllers/tutor.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================

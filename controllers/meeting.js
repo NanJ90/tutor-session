@@ -4,6 +4,11 @@ module.exports = function(app) {
   app.get("/api/meetings", function(req, res) {
     db.Meetings.findAll({}).then(function(dbMeeting) {
       res.json(dbMeeting);
+
+      console.log(".....................");
+      console.log(dbMeeting);
+      console.log(".....................");
+
     });
   });
 

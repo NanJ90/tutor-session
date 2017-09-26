@@ -14,7 +14,7 @@ module.exports = function(sequelize, DataTypes) {
 
       Meetings.belongsTo(models.Tutor, {
         foreignKey: {
-          allowNull: true
+          allowNull: false
         }
       });
       Meetings.belongsTo(models.Student, {

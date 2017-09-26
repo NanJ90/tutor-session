@@ -5,11 +5,6 @@
 module.exports = function(sequelize, DataTypes) {
 
   var Student = sequelize.define("Student", {
-      id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true
-      },
       name: {
   			type: DataTypes.STRING,
   			allowNull: false,
@@ -19,17 +14,18 @@ module.exports = function(sequelize, DataTypes) {
   		},
       password: {
   			type: DataTypes.STRING,
-  			allowNull: false
+  			allowNull: true
   		},
       email: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         validate: {
           isEmail: true
         }
       },
       phone: {
         type: DataTypes.STRING,
+        allowNull: true,
         validate: {
           len: [7, 22]
         }
@@ -69,7 +65,7 @@ module.exports = function(sequelize, DataTypes) {
 
       Student.hasMany(models.Meetings, {
 
-        onDelete: "SET NULL",
+        // onDelete: "SET NULL",
 
       });
 
