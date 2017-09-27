@@ -5,18 +5,26 @@ import moment from 'moment';
  
 BigCalendar.momentLocalizer(moment); // or globalizeLocalizer
 
+let allViews = Object.keys(BigCalendar.views).map(k => BigCalendar.views[k])
 const StudentCalendar = props => (
   <div>
-    <BigCalendar
-      events={[]}
-      startAccessor='startDate'
-      endAccessor='endDate'
-    />
+     <BigCalendar
+          selectable
+        // calling API to retrieve data from data base
+          events= { 
+            props.events
+            }
+          views={allViews}
+          defaultDate={new Date()}
+          selectable={true}
+          onSelectSlot={props.slotselected}
+        />
   </div>
 );
 
-
-
+const tbStyle={
+  padding:10
+}
 
 
 

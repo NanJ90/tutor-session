@@ -2,8 +2,11 @@ var db = require("../models");
 
 module.exports = function(app) {
   app.get("/api/meetings", function(req, res) {
-    db.Meetings.findAll({}).then(function(dbMeeting) {
+    db.Meetings.findAll({
+      // include: [{db.Tutor}
+    }).then(function(dbMeeting) {
       res.json(dbMeeting);
+      // console.log(dbMeeting);
     });
   });
 
