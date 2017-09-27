@@ -6,6 +6,20 @@
 // =============================================================
 var express = require("express");
 var bodyParser = require("body-parser");
+    var passport   = require('passport');
+    var session    = require('express-session');
+    var env        = require('dotenv').load();
+
+
+    // For Passport
+    app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true})); // session secret
+    app.use(passport.initialize());
+    app.use(passport.session()); // 
+
+
+    //load passport strategies
+    require('./app/config/passport/passport.js')(passport);
+
 
 // Sets up the Express App
 // =============================================================
