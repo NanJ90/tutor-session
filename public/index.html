@@ -10,6 +10,10 @@
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
 
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+
     <!--
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
@@ -37,31 +41,13 @@
 
   </head>
   <body>
-<nav class="white" role="navigation">
-        <div class="nav-wrapper container">
-            <a id="logo-container" data-activates="sidebar" href="#" class="brand-logo"><img height=120px src="./img/plw-logo.png"></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="#">Sign Up</a></li>
-                <li><a href="#">Log In</a></li>
-                <li><a href="developers">About Developers</a></li>                
-            </ul>
-            <ul id="sidebar" class="side-nav">
-                <img width=100% src="./img/gaelle.jpg">
-                <li><a href="#">Sign Up</a></li>
-                <li><a href="#">Log In</a></li>
-                <li><a href="developers">About Developers</a></li>
-
-            </ul>
-            <a href="#" data-activates="sidebar" class="button-collapse"><i class="material-icons">menu</i></a>
-        </div>
-    </nav>
 
 
-    <br/><br/><br/> <br/><br/><br/>
+
 
     <div id="root"></div>
 
-        <br/><br/><br/> <br/><br/><br/>
+
 
 
 
@@ -75,25 +61,7 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    <footer class="page-footer red">
-        <div class="container">
-            <div class="row">
-                <div class="col s12">
-                    <h5 class="white-text">About Us</h5>
-                    <p class="grey-text text-lighten-4">PLW Education (PLW) is a US based company with branch offices throughout China that focuses on the successful United States placement of Greater China students entering middle school, high school and college. We have over 20 years experience and the knowledge and relationships to successfully place your son or daughter into the best possible school and living arrangement. In today’s ever changing education system, it is important to find a partner and guide who will provide you with a one stop solution which places you and the student in a position to succeed. Our company focuses on Quality, Best Fit, Safety and School Reputation as our core values. We understand parents want an environment which is safe, friendly and academically challenging.</p>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright">
-            <div class="container">
-                Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-            </div>
-        </div>
-    </footer>
-    <!--  Scripts-->
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="js/materialize.js"></script>
-    <script src="js/init.js"></script>
+    
 </body>
 
 <script type="text/javascript">
@@ -101,6 +69,10 @@
     // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
     $('.modal').modal();
   });
+
+          $(document).ready(function() {
+        $('.carousel').carousel();
+    });
 </script>
 
 
