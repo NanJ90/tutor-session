@@ -11,6 +11,10 @@ nav .brand-logo {
   color: #444;
 }
 
+iframe {
+  border: 0px;
+  border-color: white;
+}
 p {
   line-height: 2rem;
 }
@@ -66,6 +70,27 @@ footer.page-footer {
 }
 
 .modal { 
-  width: 25% ;
-  height: 80%;
+  width: 30%;
 } 
+
+.carousel {
+  position: relative;
+  bottom: 200px;
+
+}
+
+.circle {
+  border:5px solid white; 
+}
+
+.sidepic {
+  width: 100%;
+}
+
+.logomain {
+  width: 130px;
+}
+
+.btn-large {
+  margin: 10px;
+}

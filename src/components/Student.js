@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import StudentCalendar from './children/StudentCalendar';
 
 
-class Tutor extends Component {
+class Student extends Component {
   
   render() {
     return (
@@ -31,4 +31,4 @@ class Tutor extends Component {
   }
 }
 
-export default Tutor;
+export default Student;
