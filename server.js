@@ -6,25 +6,14 @@
 // =============================================================
 var express = require("express");
 var bodyParser = require("body-parser");
-    var passport   = require('passport');
-    var session    = require('express-session');
-    var env        = require('dotenv').load();
-
-
-    // For Passport
-    app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true})); // session secret
-    app.use(passport.initialize());
-    app.use(passport.session()); // 
-
-
-    //load passport strategies
-    require('./app/config/passport/passport.js')(passport);
-
+var passport = require("passport");
+var session = require('express-session');
+var env = require('dotenv').load();
 
 // Sets up the Express App
 // =============================================================
 var app = express();
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 8080;
 
 // Requiring our models for syncing
 var db = require("./models");
@@ -34,6 +23,16 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+
+// For Passport
+    app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true})); // session secret
+    app.use(passport.initialize());
+    app.use(passport.session()); // 
+
+
+//load passport strategies
+    require('./config/passport/passport.js')(passport);
+
 
 // Static directory
 app.use(express.static("public"));

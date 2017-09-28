@@ -4,7 +4,7 @@ import { Link } from "react-router";
 const Navbar = () => (
 <nav className="white" role="navigation">
         <div className="nav-wrapper container">
-            <a id="logo-container" data-activates="sidebar" href="/" className="brand-logo"><img className="hoverable logomain" src="./img/plw-logo.png"/></a>
+            <a id="logo-container" data-activates="sidebar" href="/" className="brand-logo center"><img className="hoverable logomain" src="./img/plw-logo.png"/></a>
             <ul className="right hide-on-med-and-down">
                 <li><a href="./">Home</a></li>
                 <li><a href="#">New Student</a></li>

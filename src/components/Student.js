@@ -6,26 +6,31 @@ class Student extends Component {
   
   render() {
     return (
-        <div className="tutor">
-            <div className="navbar-fixed">
-        
-                <ul id="dropdown1" className="dropdown-content">
-                    <li><a href="#!">Profile</a></li>
-                    <li className="divider"></li>
-                    <li><a href="#!">Log out</a></li>
-                </ul>
-                <nav>
-                    <div className="nav-wrapper red accent-4">
-                        <a href="#!" className="brand-logo">PLW Ed Tutoring Services</a>
-                        <ul className="right hide-on-med-and-down">                  
-                            <li><a className="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i className="material-icons right">arrow_drop_down</i></a></li>
-                        </ul>
-                    </div>
-                </nav>
+        <div className="tutor center">
+        <div id="index-banner" className="parallax-container">
+
+
+
+     <div className="parallax"><img src="./img/digital.jpg" alt="Unsplashed background img 1"></img></div>
+    </div>
+        <br></br><br></br>
+            <div className="row">
+            <div className="col s7 m7">
+
             </div>
-            <div>
+            <div className="col s4 m4">
+            <button data-target="modal1" className="btn waves-effect waves-light red lighten-1 modal-trigger hoverable">ADD</button>
+
+            <button data-target="modal1" className="btn waves-effect waves-light red lighten-1 modal-trigger hoverable">LOGOUT</button></div>
+            </div>
+             <br></br>
+            <div className="row">
+            <div className="col s2 m2"></div>
+            <div className="col s8 m8">
                 <StudentCalendar />
-            </div>
+        </div>
+        <div className="col s2 m2"></div>
+        </div>
         </div>
     );
   }

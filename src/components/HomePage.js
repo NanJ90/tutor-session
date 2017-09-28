@@ -53,7 +53,7 @@ class HomePage extends Component {
 
         <div className="row">
           <div className="input-field col s12">
-            <a href="index.html" className="btn waves-effect waves-light col s12 red">Login</a>
+            <a href="/tutor" className="btn waves-effect waves-light col s12 red">Login</a>
           </div>
         </div>
       </form>
@@ -88,7 +88,7 @@ class HomePage extends Component {
 
         <div className="row">
           <div className="input-field col s12">
-            <a href="index.html" className="btn waves-effect waves-light col s12 red">Login</a>
+            <a href="/student" className="btn waves-effect waves-light col s12 red">Login</a>
           </div>
         </div>
       </form>

@@ -12,15 +12,15 @@ BigCalendar.setLocalizer(
 let allViews = Object.keys(BigCalendar.views).map(k => BigCalendar.views[k])
 
 const TutorCalendar = props => (
-  <div>
+  <div className="calendar">
     <BigCalendar
-    
+      selectable
       events= {[
   {
     'title': 'All Day Event',
     'allDay': true,
-    'start': new Date(2017, 9, 25),
-    'end': new Date(2017, 9, 26)
+    'start': new Date(2017, 8, 25),
+    'end': new Date(2017, 8, 26)
   }
  //  {
  //    'title': 'Long Event',
@@ -96,6 +96,7 @@ const TutorCalendar = props => (
   //   'end': new Date(2015, 3, 22, 2, 0, 0)
   // }
 ]}
+      defaultView='week'
       views={allViews}
       startAccessor='startDate'
       endAccessor='endDate'
