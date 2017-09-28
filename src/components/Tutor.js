@@ -1,12 +1,33 @@
 import React, { Component } from 'react';
 import TutorCalendar from './children/TutorCalendar';
+import Add from './children/Add';
 import moment from 'moment';
+import helpers from '../utils/helpers';
 
 class Tutor extends Component {
-  
+  constructor(){
+        super();
+        this.state={
+            events:[]
+        }
+}
+    componentDidMount(){
+         // console.log(this.state);
+        helpers.getTutorCalendar().then(res =>{
+            console.log("populate student calendar",res.data);
+            });     
+    }
+    updateEvent(session){
+        // console.log(session);
+        this.setState({events:session});
+        helpers.addingStudentDate().then(function(res,req) {
+
+        })
+    }
   render() {
     return (
         <div className="tutor center">
+            <Add updateEvent={this.updateEvent}/>
         <div id="index-banner" className="parallax-container">
 
 
@@ -19,7 +40,7 @@ class Tutor extends Component {
 
             </div>
             <div className="col s4 m4">
-            <button data-target="modal1" className="btn waves-effect waves-light red lighten-1 modal-trigger hoverable">ADD</button>
+            <button data-target="modal3" className="btn waves-effect waves-light red lighten-1 modal-trigger hoverable">ADD</button>
 
             <button data-target="modal1" className="btn waves-effect waves-light red lighten-1 modal-trigger hoverable">LOGOUT</button></div>
             </div>
