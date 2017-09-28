@@ -4,12 +4,12 @@ import helpers from '../utils/helpers';
 
 class Tutor extends Component {
    
-   componentDidMount(){
-         // console.log(this.state);
-        helpers.getStudentCalendar().then(res =>{
-            console.log("populate student calendar",res.data);
-            });     
-    }
+   // componentDidMount(){
+   //       // console.log(this.state);
+   //      helpers.getStudentCalendar().then(res =>{
+   //          console.log("populate student calendar",res.data);
+   //          });     
+   //  }
   
   render() {
     return (
