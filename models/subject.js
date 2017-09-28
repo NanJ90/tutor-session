@@ -1,11 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
 
   var Subject = sequelize.define("Subject", {
-      id: {
-  			type: DataTypes.INTEGER,
-  			primaryKey: true,
-  			autoIncrement: true
-  		},
       name: {
         type: DataTypes.STRING,
         allowNull: false
@@ -16,11 +11,13 @@ module.exports = function(sequelize, DataTypes) {
 
   Subject.associate = function(models) {
 
-      Subject.belongsTo(models.Tutor, {
-        foreignKey: {
-          notNull: true
-        }
-      });
+    Subject.belongsToMany(models.Tutor, {
+      through: {model: "TutorSubject"},
+      timestamps: false,
+      onDelete: 'CASCADE',
+      onUpdate: 'CASCADE',
+      foreignKey: 'subject_id'
+    });
 
   };
 
