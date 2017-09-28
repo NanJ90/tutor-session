@@ -7,14 +7,15 @@ const Navbar = () => (
             <a id="logo-container" data-activates="sidebar" href="/" className="brand-logo center"><img className="hoverable logomain" src="./img/plw-logo.png"/></a>
             <ul className="right hide-on-med-and-down">
                 <li><a href="./">Home</a></li>
-                <li><a href="#">New Student</a></li>
-                <li><a href="developers">About Developers</a></li>                
+                <li><a href="Developers">About Developers</a></li>                
             </ul>
             <ul id="sidebar" className="side-nav">
                 <img className="sidepic" src="./img/gaelle.jpg"/>
                 <li><a href="./">Home</a></li>
                 <li><a href="#">New Student</a></li>
-                <li><a href="developers">About Developers</a></li>
+                <li><a href="Tutor">Tutor Calendar</a></li>
+                <li><a href="Student">Student Calendar</a></li>
+                <li><a href="Developers">About Developers</a></li>
 
             </ul>
             <a href="#" data-activates="sidebar" className="button-collapse"><i className="material-icons">menu</i></a>
