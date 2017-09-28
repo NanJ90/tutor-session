@@ -14,19 +14,19 @@ var helpers = {
 	},
 // retrieve tutor calendar 
 	getTutorCalendar:function(){
-		return axios.get('api/meetings');
+		return axios.get('api/meetings/tutor/:id');
 		// return axios.get(`api/meetings/${id}`);
 	},
 
 // retrive student calendar
 	getStudentCalendar:function(){
-		return axios.get('api/students');
+		return axios.get('api/students/:id');
 
 		// return axios.get(`api/students/${id}`);
 	},
 // adding student schedule
-	addingStudentDate:function(){
-		return axios.post("api/students");
+	addingTutorDate:function(){
+		return axios.post("api/students/:id");
 	}
 
 }
