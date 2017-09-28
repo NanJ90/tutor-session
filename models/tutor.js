@@ -7,11 +7,6 @@
 module.exports = function(sequelize, DataTypes) {
 
   var Tutor = sequelize.define("Tutor", {
-      id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true
-      },
       name: {
   			type: DataTypes.STRING,
   			allowNull: false,
@@ -21,18 +16,18 @@ module.exports = function(sequelize, DataTypes) {
   		},
       password: {
   			type: DataTypes.STRING,
-  			allowNull: false
+  			allowNull: true
   		},
       email: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         validate: {
           isEmail: true
         }
       },
       phone: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         validate: {
           len: [7, 22]
         }
@@ -45,32 +40,7 @@ module.exports = function(sequelize, DataTypes) {
         }
       }
     }
-    // ,
-    // THIS PART IS COPIED FROM GEN'S CODE FROM OUR LAST PROJECT TOGETHER
-    //    BECAUSE I THINK IT MAY BE NECESSARY?
-    // {
-  	// 	timestamps: false
-  	// },
-    //   {
-   // 		hooks: {
-   // 			beforeValidate: function(user, options) {
-   // 				user.username = user.username.toLowerCase();
-   // 			}
-   // 		},
-   // 		classMethods: {
-   // 			generateHash: function(password) {
-   // 				return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
-   // 			},
-   // 			associate: function(models) {
-   // 				Tutor.hasMany(models.Meeting);
-   // 			}
-   // 		},
-   // 		instanceMethods: {
-   // 			validPassword: function(password) {
-   // 				return bcrypt.compareSync(password, this.password);
-   // 			}
-   // 		}
-   // 	}
+
    , {
      timestamps: false
    });
@@ -81,8 +51,12 @@ module.exports = function(sequelize, DataTypes) {
         onDelete: "CASCADE"
       });
 
-      Tutor.hasMany(models.Subject, {
-        onDelete: "CASCADE"
+      Tutor.belongsToMany(models.Subject, {
+        through: {model: "TutorSubject"},
+        timestamps: false,
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE',
+        foreignKey: 'tutor_id'
       });
 
 

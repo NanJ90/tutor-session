@@ -27,7 +27,7 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 // For Passport
     app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true})); // session secret
     app.use(passport.initialize());
-    app.use(passport.session()); // 
+    app.use(passport.session()); //
 
 
 //load passport strategies
@@ -43,7 +43,8 @@ app.use(express.static("public"));
 require("./controllers/meeting.js")(app);
 require("./controllers/student.js")(app);
 require("./controllers/subject.js")(app);
-// require("./controllers/tutor.js")(app);
+require("./controllers/tutor.js")(app);
+require("./controllers/tutorsubject.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
