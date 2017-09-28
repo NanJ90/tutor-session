@@ -4,6 +4,7 @@
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
   "main": "server.js",
   "dependencies": {
+    "axios": "^0.16.2",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.2",
     "cldr": "^4.5.0",
@@ -20,6 +21,7 @@
     "react-big-calendar": "^0.15.0",
     "react-dom": "^15.6.1",
     "react-events-calendar": "^1.0.0-beta.3",
+    "react-modal": "^2.3.2",
     "react-router": "^3.0.0",
     "react-scripts": "1.0.13",
     "sequelize": "^4.11.0",
