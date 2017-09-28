@@ -43,6 +43,8 @@ app.use(express.static("public"));
 require("./controllers/meeting.js")(app);
 require("./controllers/student.js")(app);
 require("./controllers/subject.js")(app);
+// require("./controllers/tutor.js")(app);
+require("./controllers/html-student.js")(app);
 require("./controllers/tutor.js")(app);
 require("./controllers/tutorsubject.js")(app);
 
