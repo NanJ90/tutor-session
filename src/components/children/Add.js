@@ -50,7 +50,7 @@ class Add extends Component{
                 <div className="row">
                   <div className="input-field col s12 center">
                     <img src="./img/plw-logo.png" width="25%" alt="" className="responsive-img valign profile-image-login"></img>
-                    <h5 className="center login-form-text">Add you session</h5>
+                    <h5 className="center login-form-text">Add a New Session</h5>
                   </div>
                 </div>
                 <div className="row">
