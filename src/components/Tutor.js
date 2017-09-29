@@ -8,23 +8,89 @@ class Tutor extends Component {
   constructor(){
         super();
         this.state={
-            events:[]
+            events:[
+               // {'title':'David',
+               // 'start':new Date(2017,8,28,13,0),
+               //  'end': new Date(2017,8,28,14,0)
+               //  }
+            ]
         }
+    this.updateEvent = this.updateEvent.bind(this);
 }
+
+    // formatDate(item){
+    //      var format =moment(item).format("YYYY,M,D,h,m");
+    //         format = format.split(",");
+    //         var newArr =[];
+    //         for (var i=0; i<format.length;i++){
+    //             var newEl = parseInt(format[i]);
+    //             newArr.push(newEl); 
+    //         }
+    //     //  this.setState({ 
+    //     //     events:[{
+    //     //         // 'title':'Nan',
+    //     //     'start':new Date(newArr[0],newArr[1]-1,newArr[2],newArr[3],newArr[4]),
+    //     //     'end': new Date(newArr[0],newArr[1]-1,newArr[2],newArr[3]+1,newArr[4])
+    //     //     }]
+    //     // });
+    // }
     componentDidMount(){
          // console.log(this.state);
-        helpers.getTutorCalendar().then(res =>{
-            console.log("populate student calendar",res.data);
+        helpers.getSession().then(res =>{
+            // console.log("populate student calendar",res.data);
+        //     var newArray = []
+        //     res.data.map(data=>{
+        //     newArray.push(moment(data.day).format("YYYY,M,D,m,s"));
+
+        //     });
+
+        //     newArray = newArray.split(",");
+        //     var newArr =[];
+        //     for (var i=0; i<newArray.length;i++){
+        //         var newEl = parseInt(newArray[i]);
+        //         newArr.push(newEl); 
+        //     }
+        //  this.setState({ 
+        //     events:[{
+        //         // 'title':'Nan',
+        //     'start':new Date(newArr[0],newArr[1]-1,newArr[2],newArr[3],newArr[4]),
+        //     'end': new Date(newArr[0],newArr[1]-1,newArr[2],newArr[3]+1,newArr[4])
+        //     }]
+        // });
+
             });     
     }
     updateEvent(session){
-        // console.log(session);
-        this.setState({events:session});
-        helpers.addingStudentDate().then(function(res,req) {
-
-        })
+         // newArrayting userInput for big Calendar
+         var format =moment(session, "YYYY,MM,DD,hh,mm,ss").format("YYYY,M,D,h,m");
+            format = format.split(",");
+            var newArr =[];
+            for (var i=0; i<format.length;i++){
+                var newEl = parseInt(format[i]);
+                newArr.push(newEl); 
+            }
+         this.setState({ 
+            events:[{
+                // 'title':'Nan',
+            'start':new Date(newArr[0],newArr[1]-1,newArr[2],newArr[3],newArr[4]),
+            'end': new Date(newArr[0],newArr[1]-1,newArr[2],newArr[3]+1,newArr[4])
+            }]
+        });
+        // console.log(newArr);
+        // this.setState({})
+        // format = new Date(format);
+        // this.setState({events:[{
+        //     'title:start':session]});
+        // console.log("passing from children",session);   
+        // console.log("after insert database", this.state);
+        helpers.addingMeeting(session)
+        // .then(res =>{
+        //     console.log("after insert database",res);
+        //  // this.setState({events:})
+        // }) 
     }
   render() {
+    // console.log("update",this.state)
     return (
         <div className="tutor center">
             <Add updateEvent={this.updateEvent}/>
@@ -48,7 +114,7 @@ class Tutor extends Component {
         	<div className="row">
         	<div className="col s2 m2"></div>
         	<div className="col s8 m8">
-                <TutorCalendar />
+                <TutorCalendar events={this.state.events}/>
         </div>
         <div className="col s2 m2"></div>
         </div>
