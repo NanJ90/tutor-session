@@ -31,7 +31,7 @@ class HomePage extends Component {
     <div className="modal-content">
      <div id="login-page" className="row">
     <div className="col s12">
-      <form className="login-form" id="signin" name="signin" method="post" action="/tutor/signin">
+      <form className="login-form" id="signin" name="signin" method="post" action="/Student">
         <div className="row">
           <div className="input-field col s12 center">
             <img src="./img/plw-logo.png" width="25%" alt="" className="responsive-img valign profile-image-login"></img>
