@@ -96,8 +96,8 @@ class Tutor extends Component {
             intArr.forEach(d=>{
                 objArray.push({
                     "title": "Nan",
-                    "start": new Date(d[0],d[1],d[2],d[3],d[4]),
-                    "end": new Date(d[0],d[1],d[2],d[3]+1,d[4])
+                    "start": new Date(d[0],d[1]-1,d[2],d[3],d[4]),
+                    "end": new Date(d[0],d[1]-1,d[2],d[3]+1,d[4])
                 });
             });
 

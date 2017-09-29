@@ -27,11 +27,11 @@ class Search extends Component {
             <div className="col s2 m2"></div>
             <div className="col s8 m8">
 
-    <a className='dropdown-button btn red catlist' href='#' data-activates='dropdown1'>Math</a>
-    <a className='dropdown-button btn red catlist' href='#' data-activates='dropdown2'>English</a>
-    <a className='dropdown-button btn red catlist' href='#' data-activates='dropdown3'>Science</a>
-    <a className='dropdown-button btn red catlist' href='#' data-activates='dropdown4'>History</a>
-    <a className='dropdown-button btn red catlist' href='#' data-activates='dropdown5'>Advanced Placement</a>
+    <a className='dropdown-button btn red catlist' href='student' data-activates='dropdown1'>Math</a>
+    <a className='dropdown-button btn red catlist' href='student' data-activates='dropdown2'>English</a>
+    <a className='dropdown-button btn red catlist' href='student' data-activates='dropdown3'>Science</a>
+    <a className='dropdown-button btn red catlist' href='student' data-activates='dropdown4'>History</a>
+    <a className='dropdown-button btn red catlist' href='student' data-activates='dropdown5'>Advanced Placement</a>
 
     <ul id='dropdown1' className='dropdown-content'>
     <li><a href="#!">Elementary</a></li>

@@ -14,10 +14,30 @@ const StudentCalendar = props => (
     <BigCalendar
       selectable
       events= {[
-       {'title':'Math',
-       'start':new Date(2017,8,28),
-        'end': new Date(2017,8,29)
-        }
+       {'title':'Calculus',
+       'start':new Date(2017,8,28,16,0),
+        'end': new Date(2017,8,28,18,0)
+        },
+       {'title':'Calculus',
+       'start':new Date(2017,8,26,16,0),
+        'end': new Date(2017,8,26,18,0)
+        },
+       {'title':'AP Biology',
+       'start':new Date(2017,8,27,15,0),
+        'end': new Date(2017,8,27,18,0)
+        },
+       {'title':'AP Biology',
+       'start':new Date(2017,8,25,15,0),
+        'end': new Date(2017,8,25,18,0)
+        },
+       {'title':'AP Chemistry',
+       'start':new Date(2017,8,24,9,0),
+        'end': new Date(2017,8,24,12,0)
+        },
+       {'title':'AP Computer Sci',
+       'start':new Date(2017,8,30,9,0),
+        'end': new Date(2017,8,30,12,0)
+        }                           
         ]}
       defaultDate={new Date()}  
       defaultView='week'
