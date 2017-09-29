@@ -30,7 +30,7 @@ class Add extends Component{
   handleSubmit(event) {
     event.preventDefault();
     console.log("CLICKED");
-    fmTime=moment(this.state.time,"H:mm").format("HH:mm:ss");
+    fmTime=moment(this.state.time,"H:mm AA").format("HH:mm:ss");
     session = this.state.day.concat(" ", fmTime);
     this.props.updateEvent(session);
     // console.log(fmTime,session);

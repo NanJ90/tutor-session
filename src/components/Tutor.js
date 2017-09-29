@@ -131,7 +131,7 @@ class Tutor extends Component {
     }
     updateEvent(session){
          // newArraying userInput for big Calendar
-         var format =moment(session, "YYYY,MM,DD,hh,mm,ss").format("YYYY,M,D,h,m");
+         var format =moment(session, "YYYY,MM,DD,HH,mm,ss").format("YYYY,M,D,H,m");
             format = format.split(",");
             var newArr =[];
             for (var i=0; i<format.length;i++){
