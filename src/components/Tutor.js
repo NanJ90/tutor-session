@@ -95,6 +95,7 @@ class Tutor extends Component {
 
             intArr.forEach(d=>{
                 objArray.push({
+                    "title": "Nan",
                     "start": new Date(d[0],d[1],d[2],d[3],d[4]),
                     "end": new Date(d[0],d[1],d[2],d[3]+1,d[4])
                 });
@@ -142,7 +143,7 @@ class Tutor extends Component {
         events: this.state.events.concat(
                 [
                 {
-                // 'title':'Nan',
+                    'title':'Nan',
                     'start':new Date(newArr[0],newArr[1]-1,newArr[2],newArr[3],newArr[4]),
                     'end': new Date(newArr[0],newArr[1]-1,newArr[2],newArr[3]+1,newArr[4])
                 }])

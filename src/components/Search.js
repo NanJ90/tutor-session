@@ -30,7 +30,7 @@ class Search extends Component {
     <a className='dropdown-button btn red catlist' href='#' data-activates='dropdown1'>Math</a>
     <a className='dropdown-button btn red catlist' href='#' data-activates='dropdown2'>English</a>
     <a className='dropdown-button btn red catlist' href='#' data-activates='dropdown3'>Science</a>
-    <a className='dropdown-button btn red catlist' href='#' data-activates='dropdown5'>History</a>
+    <a className='dropdown-button btn red catlist' href='#' data-activates='dropdown4'>History</a>
     <a className='dropdown-button btn red catlist' href='#' data-activates='dropdown5'>Advanced Placement</a>
 
     <ul id='dropdown1' className='dropdown-content'>
