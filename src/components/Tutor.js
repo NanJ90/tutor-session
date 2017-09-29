@@ -63,10 +63,10 @@ class Tutor extends Component {
          // console.log(this.state);
         helpers.getSession().then(res =>{
             // console.log(res.data);
-            console.log("populate student calendar",res.data);
+            // console.log("populate student calendar",res.data);
             // var newArray = []
             var meeting = res.data.map(meeting=>{
-                return moment(meeting.day).format("YYYY,M,D,h,m");
+                return moment(meeting.day).format("YYYY,M,D,H,m");
             });
 
             console.log("Formatted Meeting - Year,Month,Day,etc: ", meeting);
@@ -101,7 +101,7 @@ class Tutor extends Component {
                 });
             });
 
-            console.log("OBJECT ARRAY! ", objArray);
+            // console.log("OBJECT ARRAY! ", objArray);
 
             this.setState({events:objArray});
 
@@ -170,7 +170,7 @@ class Tutor extends Component {
         // }) 
     }
   render() {
-    console.log("update",this.state)
+    // console.log("update",this.state)
     return (
         <div className="tutor center">
             <Add updateEvent={this.updateEvent}/>
