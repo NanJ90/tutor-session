@@ -25,8 +25,11 @@ var helpers = {
 		// return axios.get(`api/students/${id}`);
 	},
 // adding student schedule
-	addingTutorDate:function(){
-		return axios.post("api/students/:id");
+	addingMeeting:function(day){
+		var session = {day:day}
+		return axios.post("api/meetings", session).then(function(res){
+			console.log("into Data",res);
+		});
 	}
 
 }
