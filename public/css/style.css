@@ -98,3 +98,13 @@ footer.page-footer {
 .btn {
   margin:10px;
 }
+
+.catlist {
+  position: relative;
+  bottom: 100px;
+}
+
+#searchicon {
+  position: relative;
+  top: 80px;
+}

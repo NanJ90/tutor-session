@@ -17,7 +17,7 @@ const Footer = () => (
         </div>
         <div className="footer-copyright">
             <div className="container">
-                Made by <a className="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+                Made with <a className="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>, React, & mySQL
             </div>
         </div>
     </footer>

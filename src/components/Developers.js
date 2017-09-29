@@ -17,11 +17,11 @@ class Developers extends Component {
     </div>
 
     <div className="carousel">
-        <a className="carousel-item" href="David"><img alt="David" className="circle" src="https://lorempixel.com/250/250/nature/1"></img></a>
-        <a className="carousel-item" href="Gen"><img alt="David" className="circle" src="https://lorempixel.com/250/250/nature/2"></img></a>
-        <a className="carousel-item" href="Kyle"><img alt="David" className="circle" src="https://lorempixel.com/250/250/nature/3"></img></a>
-        <a className="carousel-item" href="Nan"><img alt="David" className="circle" src="https://lorempixel.com/250/250/nature/4"></img></a>
-        <a className="carousel-item" href="empty"><img alt="David" className="circle" src="https://lorempixel.com/250/250/nature/5"></img></a>
+        <a className="carousel-item" href="#"><img alt="" className="circle" src="./img/developers/placeholder.jpg"></img></a>
+        <a className="carousel-item" href="kiddmit3.github.io/"><img alt="David" className="circle" src="./img/developers/david.jpg"></img></a>
+        <a className="carousel-item" href="github.com/munmuney"><img alt="Gen" className="circle" src="./img/developers/gen.jpg"></img></a>
+        <a className="carousel-item" href="github.com/NanJ90"><img alt="Nan" className="circle" src="./img/developers/nan.jpg"></img></a>
+        <a className="carousel-item" href="github.com/kyserrecchia"><img alt="Kyle" className="circle" src="./img/developers/kyle.jpg"></img></a>
     </div>
 
     

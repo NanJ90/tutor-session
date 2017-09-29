@@ -97,6 +97,53 @@ class HomePage extends Component {
     </div>
   </div>
 
+  <div id="modal4" className="modal">
+    <div className="modal-content">
+     <div id="login-page" className="row">
+    <div className="col s12">
+      <form className="login-form" id="signin" name="signin" method="post" action="/student/signin">
+        <div className="row">
+          <div className="input-field col s12 center">
+            <img src="./img/plw-logo.png" width="25%" alt="" className="responsive-img valign profile-image-login"></img>
+            <h5 className="center login-form-text">NEW STUDENT</h5>
+          </div>
+        </div>
+        <div className="row">
+          <div className="input-field col s12 center">
+            <input id="email" type="text"></input>
+            <label for="email" className="center-align">Email</label>
+          </div>
+        </div>
+        <div className="row">
+          <div className="input-field col s12 center">
+            <input id="username" type="text"></input>
+            <label for="username" className="center-align">Name</label>
+          </div>
+        </div>
+        <div className="row">
+          <div className="input-field col s12 center">
+            <input id="phone" type="tel"></input>
+            <label for="phone" className="center-align">Phone Number</label>
+          </div>
+        </div>
+        <div className="row">
+          <div className="input-field col s12 center">
+            <input id="password" type="password"></input>
+            <label for="password">Password</label>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="input-field col s12">
+            <a href="/student" className="btn waves-effect waves-light col s12 red">Sign Up</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+    </div>
+  </div>
+
 
     <div className="container">
         <div className="section">
@@ -107,10 +154,13 @@ class HomePage extends Component {
                         <h2 className="center brown-text"><i className="material-icons">group</i></h2>
                         <h5 className="center">Tutoring Services</h5>
                         <p className="light">
-                            PLW Education has many after schools and partners in the U.S. which enable us to provide enhanced English and subject learning both in small classes or one on one tutoring.</p>
-                        <p className="light">
                             We pride ourselves in ensuring your student has the absolute best services available to enhance/supplement their regular school curriculum. These classes and private tutoring sessions focus on the student’s weaknesses and makes sure they improve and support success in the regular classroom.
                           </p>
+
+<div className="center">
+<button data-target="modal4" className="btn waves-effect waves-light red lighten-1 modal-trigger hoverable">NEW STUDENT SIGN UP</button>
+</div>
+
                     </div>
                 </div>
                 <div className="col s12 m5">

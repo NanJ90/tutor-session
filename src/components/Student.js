@@ -72,9 +72,11 @@ class Student extends Component {
 
             </div>
             <div className="col s4 m4">
-            <button data-target="modal3" className="btn waves-effect waves-light red lighten-1 modal-trigger hoverable">ADD</button>
 
-            <button data-target="modal1" className="btn waves-effect waves-light red lighten-1 modal-trigger hoverable">LOGOUT</button></div>
+            <a href="Search"><button data-target="modal1" className="btn waves-effect waves-light red lighten-1 modal-trigger hoverable"><i className="material-icons">search</i></button></a>
+
+            <a href="/"><button data-target="modal1" className="btn waves-effect waves-light red lighten-1 modal-trigger hoverable">LOGOUT</button></a>
+            </div>
             </div>
              <br></br>
             <div className="row">
