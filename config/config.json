@@ -18,7 +18,6 @@
     "password": "b186jd90ibk3bxk2",
     "database": "r6zn9ndqpqrhmg8f",
     "host": " h40lg7qyub2umdvb.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-    "dialect": "mysql",
-    "use_env_variable": "mysql://i63e5jhbbtmuvjy0:b186jd90ibk3bxk2@h40lg7qyub2umdvb.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/r6zn9ndqpqrhmg8f"
+    "dialect": "mysql"
   }
 }
