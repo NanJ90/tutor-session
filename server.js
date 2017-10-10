@@ -25,9 +25,9 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // For Passport
-    app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true})); // session secret
-    app.use(passport.initialize());
-    app.use(passport.session()); //
+app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true})); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
 
 
 //load passport strategies
