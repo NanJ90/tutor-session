@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
-// import events from './events';
+
  
 BigCalendar.setLocalizer(
 	BigCalendar.momentLocalizer(moment)
-); // or globalizeLocalizer
+); 
 
 let allViews = Object.keys(BigCalendar.views).map(k => BigCalendar.views[k])
 

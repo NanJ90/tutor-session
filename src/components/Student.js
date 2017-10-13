@@ -7,89 +7,60 @@ import Add from './children/Add';
 import helpers from '../utils/helpers';
 
 class Student extends Component {
-
- constructor(){
+    // initail state 
+    constructor(){
         super();
         this.state={
             events:[
             ]
-            // isOpen: false
         }
-// call get api to get tutor's calendar 
-    // handleClick(){
-    //     // e.preventDefault();
-    //     helpers.getTutorSession().then(function(res){
-    //         console.log("populate tutor session",res.data);
-    //         // this.setState({events:res.body});
-    //     });
-    // this.handleOpenModal = this.handleOpenModal.bind(this);
-    // this.toggleModal= this.toggleModal.bind(this);
-    // this.addingStudentDate = this.addingStudentDate.bind(this);
-    // }
-    //  handleOpenModal () {
-    // this.setState({ isOpen: true });
-    // }
-
-  //   toggleModal () {
-  //   this.setState({
-  //     isOpen: !this.state.isOpen
-  //   });
-  // }
-    // grabUserInput(){
-
-    // }
-  }
+    }
+    // when loading, this component will call API to render all users' meeting from db
     componentDidMount(){
-         // console.log(this.state);
         helpers.getStudentCalendar().then(res =>{
             console.log("populate student calendar",res.data);
             });     
     }
-
+    // adding new meeting 
     updateEvent(session){
-        console.log(session);
         this.setState({events:session});
         helpers.addingStudentDate().then(function(res,req) {
-
         })
     }
-
-  
-  render() {
+      
+    render() {
     return (
         <div className="tutor center">
-
+            {/*pass child's state to parent through function updateEvent, and then the new data will render to the page. At the same time, the data will inser into DB*/}
             <Add updateEvent={this.updateEvent}/>
-        <div id="index-banner" className="parallax-container">
-
-
-
-     <div className="parallax"><img src="./img/digital.jpg" alt="Unsplashed background img 1"></img></div>
-    </div>
-        <br></br><br></br>
+            <div id="index-banner" className="parallax-container">
+                <div className="parallax">
+                    <img src="./img/digital.jpg" alt="Unsplashed background img 1"></img>
+                </div>
+            </div>
+            <br></br><br></br>
             <div className="row">
-            <div className="col s7 m7">
-
+                <div className="col s7 m7">
+                </div>
+                <div className="col s4 m4">
+                    <a href="Search"><button data-target="modal1" className="btn waves-effect waves-light red lighten-1 modal-trigger hoverable"><i className="material-icons">search</i></button></a>
+                    <a href="/"><button data-target="modal1" className="btn waves-effect waves-light red lighten-1 modal-trigger hoverable">LOGOUT</button></a>
+                </div>
             </div>
-            <div className="col s4 m4">
-
-            <a href="Search"><button data-target="modal1" className="btn waves-effect waves-light red lighten-1 modal-trigger hoverable"><i className="material-icons">search</i></button></a>
-
-            <a href="/"><button data-target="modal1" className="btn waves-effect waves-light red lighten-1 modal-trigger hoverable">LOGOUT</button></a>
-            </div>
-            </div>
-             <br></br>
+            <br></br>
             <div className="row">
-            <div className="col s2 m2"></div>
-            <div className="col s8 m8">
-                <StudentCalendar
-                    />
+                <div className="col s2 m2">
+                </div>
+                <div className="col s8 m8">
+                    <StudentCalendar
+                        />
+                </div>
+                <div className="col s2 m2">
+                </div>
+            </div>
         </div>
-        <div className="col s2 m2"></div>
-        </div>
-        </div>
-    );
-  }
+        );
+    }
 }
 
 export default Student;

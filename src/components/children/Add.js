@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-// import StudentCalendar from './children/StudentCalendar';
-// import react-modal from '.'
-// import Modal from 'react-modal';
-// import Modal from './children/Modal';
 import moment from 'moment';
 import helpers from '../../utils/helpers';  
 
